@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen Apartments - Mobile App</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#2563EB">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script>
+    if (!/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i.test(navigator.userAgent)) {
+        window.location.href = "https://anujdwivedi502.github.io/society_management_test/"; // Replace with your desktop site URL
+    }
+    </script>
+</head>
+<body class="mobile-app">
+    <!-- Mobile App Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <div class="header-title">
+                <h1>Naveen Apartments</h1>
+                <div class="header-subtitle">Dwarka, New Delhi</div>
+            </div>
+            <div class="header-actions">
+                <button id="emergencyBtn" class="emergency-quick-btn" title="Emergency">🚨</button>
+                <button id="loginBtn" class="header-login-btn">👤</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main App Content -->
+    <main class="app-main">
+        <!-- Home Section -->
+        <section id="home" class="app-section active">
+            <!-- Hero Dashboard Card -->
+            <div class="hero-dashboard-card">
+                <div class="hero-content">
+                    <div class="hero-icon">🏠</div>
+                    <h2>Welcome Home</h2>
+                    <p>Your modern living community with world-class amenities</p>
+                </div>
+            </div>
+
+            <!-- Quick Action Cards -->
+            <div class="quick-actions-grid">
+                <div class="quick-action-card" data-action="payment">
+                    <div class="action-icon">💳</div>
+                    <div class="action-content">
+                        <h3>Pay Bills</h3>
+                        <p>Online maintenance payment</p>
+                    </div>
+                </div>
+                
+                <div class="quick-action-card" data-action="notices">
+                    <div class="action-icon">📢</div>
+                    <div class="action-content">
+                        <h3>View Notices</h3>
+                        <p>Latest announcements</p>
+                    </div>
+                </div>
+                
+                <div class="quick-action-card" data-action="emergency">
+                    <div class="action-icon">🚨</div>
+                    <div class="action-content">
+                        <h3>Emergency</h3>
+                        <p>Emergency contacts</p>
+                    </div>
+                </div>
+                
+                <div class="quick-action-card" data-action="gallery">
+                    <div class="action-icon">📸</div>
+                    <div class="action-content">
+                        <h3>Gallery</h3>
+                        <p>View apartment photos</p>
+                    </div>
+                </div>
+                
+                <div class="quick-action-card" data-action="contact">
+                    <div class="action-icon">📞</div>
+                    <div class="action-content">
+                        <h3>Contact</h3>
+                        <p>Reach management</p>
+                    </div>
+                </div>
+                
+                <div class="quick-action-card" data-action="committee">
+                    <div class="action-icon">👥</div>
+                    <div class="action-content">
+                        <h3>Committee</h3>
+                        <p>Managing committee</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Notices -->
+            <div class="recent-notices">
+                <h2>Recent Announcements</h2>
+                <div class="notice-card high-priority">
+                    <div class="notice-icon">💳</div>
+                    <div class="notice-content">
+                        <h3>Monthly Maintenance Due</h3>
+                        <p>Aug 01, 2025</p>
+                    </div>
+                    <div class="notice-priority">High</div>
+                </div>
+                
+                <div class="notice-card medium-priority">
+                    <div class="notice-icon">📅</div>
+                    <div class="notice-content">
+                        <h3>AGM Meeting Notice</h3>
+                        <p>Jul 30, 2025</p>
+                    </div>
+                    <div class="notice-priority">Medium</div>
+                </div>
+                
+                <div class="notice-card low-priority">
+                    <div class="notice-icon">🔒</div>
+                    <div class="notice-content">
+                        <h3>Security Guidelines</h3>
+                        <p>Jul 28, 2025</p>
+                    </div>
+                    <div class="notice-priority">Low</div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">63</div>
+                    <div class="stat-label">Total Flats</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Floors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2014</div>
+                    <div class="stat-label">Established</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="app-section">
+            <div class="section-header">
+                <h1>About Us</h1>
+                <p>Learn more about our community</p>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <h2>🏢 Naveen Apartments</h2>
+                </div>
+                <div class="card-content">
+                    <p>Established in 2014, Naveen Apartments has been a beacon of modern living in Dwarka, New Delhi. Our community represents the perfect blend of contemporary architecture and comfortable living.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <h2>📍 Location Details</h2>
+                </div>
+                <div class="card-content">
+                    <div class="location-info">
+                        <div class="location-item">
+                            <span class="label">Address:</span>
+                            <span class="value">Plot no 13, Sector 5, Dwarka, New Delhi, Delhi, 110075</span>
+                        </div>
+                        <div class="location-item">
+                            <span class="label">Phone:</span>
+                            <span class="value">+91 11 2345 6789</span>
+                        </div>
+                        <div class="location-item">
+                            <span class="label">Email:</span>
+                            <span class="value">info@naveenapartments.in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="amenities-preview">
+                <h2>Key Amenities</h2>
+                <div class="amenity-chips">
+                    <div class="amenity-chip">🔒 24/7 Security</div>
+                    <div class="amenity-chip">🏢 Lift Facility</div>
+                    <div class="amenity-chip">⚡ Power Backup</div>
+                    <div class="amenity-chip">💧 Water Supply</div>
+                    <div class="amenity-chip">🚗 Parking</div>
+                    <div class="amenity-chip">📹 CCTV</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section with Fixed Mobile Layout -->
+        <section id="gallery" class="app-section">
+            <div class="section-header">
+                <h2>📸 Photo Gallery</h2>
+                <p>Explore our beautiful apartment complex</p>
+            </div>
+            
+            <!-- Fixed Mobile-First Gallery Grid -->
+            <div class="gallery-categories">
+                <div class="gallery-category-card" data-category="exterior">
+                    <div class="gallery-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop&auto=format&q=75" alt="Building Exterior">
+                        <div class="image-count-badge">6 photos</div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>🏢 Building Exterior</h3>
+                        <p>Modern front elevation and external views</p>
+                    </div>
+                </div>
+
+                <div class="gallery-category-card" data-category="interior">
+                    <div class="gallery-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&auto=format&q=75" alt="Apartment Interior">
+                        <div class="image-count-badge">6 photos</div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>🏠 Apartment Interior</h3>
+                        <p>Spacious rooms with modern layouts</p>
+                    </div>
+                </div>
+
+                <div class="gallery-category-card" data-category="amenities">
+                    <div class="gallery-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop&auto=format&q=75" alt="Amenities">
+                        <div class="image-count-badge">5 photos</div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>🏊 Amenities</h3>
+                        <p>Swimming pool and community facilities</p>
+                    </div>
+                </div>
+
+                <div class="gallery-category-card" data-category="security">
+                    <div class="gallery-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&auto=format&q=75" alt="Security">
+                        <div class="image-count-badge">4 photos</div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>🔒 Security</h3>
+                        <p>24/7 security and safety features</p>
+                    </div>
+                </div>
+
+                <div class="gallery-category-card" data-category="parking">
+                    <div class="gallery-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format&q=75" alt="Parking">
+                        <div class="image-count-badge">3 photos</div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>🚗 Parking</h3>
+                        <p>Covered and visitor parking spaces</p>
+                    </div>
+                </div>
+
+                <div class="gallery-category-card" data-category="common">
+                    <div class="gallery-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&auto=format&q=75" alt="Common Areas">
+                        <div class="image-count-badge">5 photos</div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>🏛️ Common Areas</h3>
+                        <p>Elegant lobbies and corridors</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="app-section">
+            <div class="section-header">
+                <h1>Contact Us</h1>
+                <p>Get in touch with our team</p>
+            </div>
+
+            <!-- Quick Contact Cards -->
+            <div class="contact-quick-actions">
+                <a href="tel:+911123456789" class="contact-action-card">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <h3>Call Office</h3>
+                        <p>+91 11 2345 6789</p>
+                    </div>
+                </a>
+
+                <a href="mailto:info@naveenapartments.in" class="contact-action-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <h3>Email Us</h3>
+                        <p>info@naveenapartments.in</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Management Committee -->
+            <div class="committee-section">
+                <h2>Managing Committee</h2>
+                <div class="committee-cards">
+                    <div class="committee-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-info">
+                            <h3>Mr. Deepak Sharma</h3>
+                            <div class="member-position">President</div>
+                            <div class="member-contact">
+                                <a href="tel:+919810123456" class="contact-btn">📞 Call</a>
+                                <a href="mailto:president@naveenapartments.in" class="contact-btn">✉️ Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="committee-card">
+                        <div class="member-avatar">👩‍💼</div>
+                        <div class="member-info">
+                            <h3>Mrs. Sunita Gupta</h3>
+                            <div class="member-position">Secretary</div>
+                            <div class="member-contact">
+                                <a href="tel:+919810123457" class="contact-btn">📞 Call</a>
+                                <a href="mailto:secretary@naveenapartments.in" class="contact-btn">✉️ Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="committee-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-info">
+                            <h3>Mr. Rajesh Kumar</h3>
+                            <div class="member-position">Treasurer</div>
+                            <div class="member-contact">
+                                <a href="tel:+919810123458" class="contact-btn">📞 Call</a>
+                                <a href="mailto:treasurer@naveenapartments.in" class="contact-btn">✉️ Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="committee-card">
+                        <div class="member-avatar">👩‍💼</div>
+                        <div class="member-info">
+                            <h3>Mrs. Meera Singh</h3>
+                            <div class="member-position">Joint Secretary</div>
+                            <div class="member-contact">
+                                <a href="tel:+919810123459" class="contact-btn">📞 Call</a>
+                                <a href="mailto:jointsec@naveenapartments.in" class="contact-btn">✉️ Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="committee-card">
+                        <div class="member-avatar">👨‍🔧</div>
+                        <div class="member-info">
+                            <h3>Mr. Ashok Verma</h3>
+                            <div class="member-position">Maintenance Head</div>
+                            <div class="member-contact">
+                                <a href="tel:+919810123460" class="contact-btn">📞 Call</a>
+                                <a href="mailto:maintenance@naveenapartments.in" class="contact-btn">✉️ Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Numbers Preview -->
+            <div class="emergency-numbers-preview">
+                <h2>Emergency Numbers</h2>
+                <div class="emergency-grid">
+                    <a href="tel:102" class="emergency-card medical">
+                        <div class="emergency-icon">🏥</div>
+                        <div class="emergency-label">Medical</div>
+                        <div class="emergency-number">102</div>
+                    </a>
+                    <a href="tel:101" class="emergency-card fire">
+                        <div class="emergency-icon">🚒</div>
+                        <div class="emergency-label">Fire</div>
+                        <div class="emergency-number">101</div>
+                    </a>
+                    <a href="tel:100" class="emergency-card police">
+                        <div class="emergency-icon">👮</div>
+                        <div class="emergency-label">Police</div>
+                        <div class="emergency-number">100</div>
+                    </a>
+                    <a href="tel:+911123456789" class="emergency-card security">
+                        <div class="emergency-icon">🔒</div>
+                        <div class="emergency-label">Security</div>
+                        <div class="emergency-number">Office</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="residents" class="app-section">
+            <div id="residentsLogin" class="login-section">
+                <div class="section-header">
+                    <h1>Residents Corner</h1>
+                    <p>Access exclusive resident content</p>
+                </div>
+
+                <div class="login-card">
+                    <div class="login-icon">🔐</div>
+                    <h2>Please Login</h2>
+                    <p>Access notices, meeting minutes, audit accounts, and download important forms.</p>
+                    
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" placeholder="Enter username" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter password" id="password" required>
+                        </div>
+                        <div class="demo-credentials">
+                            <p><strong>Demo Login:</strong></p>
+                            <p>Username: <code>resident</code></p>
+                            <p>Password: <code>naveen123</code></p>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width btn--large">Login to Access</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="residentsContent" class="residents-content hidden">
+                <div class="section-header">
+                    <h1>Welcome Resident!</h1>
+                    <p>Access all exclusive content and services</p>
+                    <button id="logoutBtn" class="btn btn--outline">Logout</button>
+                </div>
+
+                <div class="residents-sections">
+                    <div class="resident-section-card">
+                        <div class="section-icon">📢</div>
+                        <div class="section-content">
+                            <h3>Notices & Circulars</h3>
+                            <p>Latest notices from management</p>
+                            <div class="document-list">
+                                <div class="document-item">
+                                    <span>Monthly Maintenance Payment</span>
+                                    <span class="document-date">Aug 01, 2025</span>
+                                </div>
+                                <div class="document-item">
+                                    <span>AGM Meeting Notice</span>
+                                    <span class="document-date">Jul 30, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resident-section-card">
+                        <div class="section-icon">📝</div>
+                        <div class="section-content">
+                            <h3>Minutes of GBM</h3>
+                            <p>General Body Meeting minutes</p>
+                            <div class="document-actions">
+                                <button class="btn btn--outline btn--sm">Download AGM Minutes</button>
+                                <button class="btn btn--outline btn--sm">Download SGM Minutes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resident-section-card">
+                        <div class="section-icon">💰</div>
+                        <div class="section-content">
+                            <h3>Audit Accounts</h3>
+                            <p>Annual audit reports and statements</p>
+                            <div class="document-actions">
+                                <button class="btn btn--outline btn--sm">Download Audit Report</button>
+                                <button class="btn btn--outline btn--sm">Download Financial Statement</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resident-section-card">
+                        <div class="section-icon">📋</div>
+                        <div class="section-content">
+                            <h3>Forms & Documents</h3>
+                            <p>Download important forms</p>
+                            <div class="document-actions">
+                                <button class="btn btn--outline btn--sm">Membership Form</button>
+                                <button class="btn btn--outline btn--sm">Transfer Form</button>
+                                <button class="btn btn--outline btn--sm">Complaint Form</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-section="home">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Home</div>
+        </button>
+        <button class="nav-item" data-section="about">
+            <div class="nav-icon">ℹ️</div>
+            <div class="nav-label">About</div>
+        </button>
+        <button class="nav-item" data-section="gallery">
+            <div class="nav-icon">📸</div>
+            <div class="nav-label">Gallery</div>
+        </button>
+        <button class="nav-item" data-section="contact">
+            <div class="nav-icon">📞</div>
+            <div class="nav-label">Contact</div>
+        </button>
+        <button class="nav-item" data-section="residents">
+            <div class="nav-icon">👤</div>
+            <div class="nav-label">Login</div>
+        </button>
+    </nav>
+
+    <!-- Mobile-Optimized Gallery Modal -->
+    <div id="galleryModal" class="modal gallery-modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="gallery-modal-content">
+            <div class="gallery-modal-header">
+                <h3 id="galleryModalTitle">Gallery</h3>
+                <button class="modal-close gallery-close" id="closeGalleryModal">&times;</button>
+            </div>
+            <div class="gallery-modal-body">
+                <div class="gallery-main-image">
+                    <button class="gallery-nav gallery-prev" id="galleryPrev">‹</button>
+                    <img id="galleryMainImage" src="" alt="" class="main-gallery-image">
+                    <button class="gallery-nav gallery-next" id="galleryNext">›</button>
+                    <div class="gallery-counter">
+                        <span id="galleryCounter">1 of 5</span>
+                    </div>
+                </div>
+                <div class="gallery-caption-area">
+                    <p id="galleryImageCaption">Image caption</p>
+                </div>
+                <div class="gallery-thumbnails" id="galleryThumbnails">
+                    <!-- Thumbnails will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div id="emergencyModal" class="modal emergency-modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="emergency-modal-content">
+            <div class="emergency-modal-header">
+                <h3>🚨 Emergency Numbers</h3>
+                <button class="modal-close" id="closeEmergencyModal">&times;</button>
+            </div>
+            <div class="emergency-modal-body">
+                <div class="emergency-categories">
+                    <div class="emergency-category">
+                        <h4>🏥 Medical Emergency</h4>
+                        <div class="emergency-contacts">
+                            <a href="tel:102" class="emergency-contact-large">
+                                <div class="contact-name">Ambulance Service</div>
+                                <div class="contact-number">102</div>
+                            </a>
+                            <a href="tel:+91114277777" class="emergency-contact-large">
+                                <div class="contact-name">Venkateshwar Hospital</div>
+                                <div class="contact-number">+91 11 4277 7777</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="emergency-category">
+                        <h4>🚒 Fire Emergency</h4>
+                        <div class="emergency-contacts">
+                            <a href="tel:101" class="emergency-contact-large">
+                                <div class="contact-name">Fire Department</div>
+                                <div class="contact-number">101</div>
+                            </a>
+                            <a href="tel:+91112504222" class="emergency-contact-large">
+                                <div class="contact-name">Dwarka Fire Station</div>
+                                <div class="contact-number">+91 11 2504 2222</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="emergency-category">
+                        <h4>👮 Police Emergency</h4>
+                        <div class="emergency-contacts">
+                            <a href="tel:100" class="emergency-contact-large">
+                                <div class="contact-name">Police Emergency</div>
+                                <div class="contact-number">100</div>
+                            </a>
+                            <a href="tel:+91112508801" class="emergency-contact-large">
+                                <div class="contact-name">Dwarka Police Station</div>
+                                <div class="contact-number">+91 11 2508 8015</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="emergency-category">
+                        <h4>🔒 Society Emergency</h4>
+                        <div class="emergency-contacts">
+                            <a href="tel:+911123456789" class="emergency-contact-large">
+                                <div class="contact-name">Security Office</div>
+                                <div class="contact-number">+91 11 2345 6789</div>
+                            </a>
+                            <a href="tel:+919810123460" class="emergency-contact-large">
+                                <div class="contact-name">Maintenance Emergency</div>
+                                <div class="contact-number">+91 9810123460</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
