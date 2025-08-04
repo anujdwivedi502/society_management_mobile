@@ -1,4 +1,4 @@
-// Mobile App JavaScript for Naveen Apartments - Fixed Navigation System
+// Mobile App-Style JavaScript for Naveen Apartments
 
 class MobileApartmentApp {
     constructor() {
@@ -7,11 +7,6 @@ class MobileApartmentApp {
         this.currentGalleryCategory = null;
         this.currentImageIndex = 0;
         this.galleryData = this.initializeGalleryData();
-        this.touchStartX = 0;
-        this.touchEndX = 0;
-        this.touchStartY = 0;
-        this.touchEndY = 0;
-        this.isSwipeEnabled = true;
         this.init();
     }
 
@@ -33,113 +28,76 @@ class MobileApartmentApp {
                 images: [
                     {src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop&auto=format&q=75", caption: "Spacious living room with modern furnishing"},
                     {src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop&auto=format&q=75", caption: "Master bedroom with premium interiors"},
-                    {src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&auto=format&q=75", caption: "Modern kitchen with built-in appliances"},
-                    {src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop&auto=format&q=75", caption: "Luxury bathroom with premium fittings"},
-                    {src: "https://images.unsplash.com/photo-1560448075-bb485b067938?w=800&h=600&fit=crop&auto=format&q=75", caption: "Balcony with beautiful city views"},
-                    {src: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622?w=800&h=600&fit=crop&auto=format&q=75", caption: "Storage and utility areas"}
+                    {src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&auto=format&q=75", caption: "Modular kitchen with built-in appliances"},
+                    {src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop&auto=format&q=75", caption: "Modern bathroom with premium fittings"},
+                    {src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop&auto=format&q=75", caption: "Balcony with park view and fresh air"},
+                    {src: "https://images.unsplash.com/photo-1540518614846-7eded47432f5?w=800&h=600&fit=crop&auto=format&q=75", caption: "Additional room and storage spaces"}
                 ]
             },
             "amenities": {
-                title: "Amenities",
+                title: "Community Amenities",
                 images: [
-                    {src: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop&auto=format&q=75", caption: "Swimming pool with crystal clear water"},
-                    {src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&auto=format&q=75", caption: "Modern gymnasium with latest equipment"},
-                    {src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop&auto=format&q=75", caption: "Children's play area with safe equipment"},
-                    {src: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&h=600&fit=crop&auto=format&q=75", caption: "Community hall for events and gatherings"},
-                    {src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop&auto=format&q=75", caption: "Beautiful garden and landscaping"}
+                    {src: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop&auto=format&q=75", caption: "Modern swimming pool facility"},
+                    {src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&auto=format&q=75", caption: "Well-equipped fitness center"},
+                    {src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop&auto=format&q=75", caption: "Community hall for events"},
+                    {src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop&auto=format&q=75", caption: "Children's playground area"},
+                    {src: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=600&fit=crop&auto=format&q=75", caption: "Landscaped gardens and walking paths"}
                 ]
             },
             "security": {
-                title: "Security",
+                title: "Security Features",
                 images: [
-                    {src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&auto=format&q=75", caption: "Main security gate with modern access control"},
-                    {src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&auto=format&q=75", caption: "Security booth with 24/7 monitoring"},
-                    {src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&auto=format&q=75", caption: "CCTV surveillance system"},
-                    {src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&auto=format&q=75&brightness=80", caption: "Night security with proper lighting"}
+                    {src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&auto=format&q=75", caption: "Main security gate with automated barrier"},
+                    {src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&auto=format&q=75", caption: "Security booth with 24/7 guard facility"},
+                    {src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&auto=format&q=75", caption: "CCTV monitoring and surveillance system"},
+                    {src: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=800&h=600&fit=crop&auto=format&q=75", caption: "Night security and illumination"}
                 ]
             },
             "parking": {
-                title: "Parking",
+                title: "Parking Facilities",
                 images: [
-                    {src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&auto=format&q=75", caption: "Covered parking area for residents"},
-                    {src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format&q=75", caption: "Visitor parking near main entrance"},
-                    {src: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&auto=format&q=75", caption: "Two-wheeler parking section"}
+                    {src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format&q=75", caption: "Covered parking for residents"},
+                    {src: "https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&h=600&fit=crop&auto=format&q=75", caption: "Visitor parking area near entrance"},
+                    {src: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&h=600&fit=crop&auto=format&q=75", caption: "Two-wheeler parking section"}
                 ]
             },
             "common": {
                 title: "Common Areas",
                 images: [
-                    {src: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=600&fit=crop&auto=format&q=75", caption: "Elegant lobby with modern design"},
-                    {src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&auto=format&q=75", caption: "High-speed elevators"},
-                    {src: "https://images.unsplash.com/photo-1571624436279-b272aff752b5?w=800&h=600&fit=crop&auto=format&q=75", caption: "Well-lit corridors with modern lighting"},
-                    {src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&auto=format&q=75", caption: "Community notice board area"},
-                    {src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop&auto=format&q=75", caption: "Comfortable seating areas"}
+                    {src: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=600&fit=crop&auto=format&q=75", caption: "Elegant lobby with reception area"},
+                    {src: "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=800&h=600&fit=crop&auto=format&q=75", caption: "High-speed elevators with modern controls"},
+                    {src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop&auto=format&q=75", caption: "Well-lit corridors with safety features"},
+                    {src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop&auto=format&q=75", caption: "Community notice boards and seating"},
+                    {src: "https://images.unsplash.com/photo-1540518614846-7eded47432f5?w=800&h=600&fit=crop&auto=format&q=75", caption: "Common seating areas for residents"}
                 ]
             }
         };
     }
 
     init() {
-        console.log('Initializing Mobile Apartment App...');
-        // Wait for DOM to be fully ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                this.setupApp();
-            });
-        } else {
-            this.setupApp();
-        }
-    }
-
-    setupApp() {
         this.bindEvents();
         this.initializeNavigation();
         this.showSection('home');
-        this.initializeTouchGestures();
+        this.handleTouchGestures();
         this.initializeQuickActions();
-        setTimeout(() => this.preloadImages(), 1000);
-        console.log('Mobile Apartment App with fixed navigation initialized successfully');
+        this.preloadImages();
+        console.log('Mobile Apartment App initialized successfully');
     }
 
     bindEvents() {
-        console.log('Binding events...');
-
-        // Bottom navigation - Complete fix
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            const section = item.getAttribute('data-section');
-            console.log('Binding bottom nav item:', section);
-            
-            // Remove any existing listeners
-            item.replaceWith(item.cloneNode(true));
-        });
-
-        // Re-bind after cloning
+        // Bottom navigation
         document.querySelectorAll('.nav-item').forEach(item => {
-            const section = item.getAttribute('data-section');
-            
             item.addEventListener('click', (e) => {
                 e.preventDefault();
-                e.stopPropagation();
-                console.log('Bottom nav clicked:', section);
-                this.navigateToSection(section);
-            });
-
-            // Touch events for mobile
-            item.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Bottom nav touched:', section);
+                const section = item.getAttribute('data-section');
                 this.navigateToSection(section);
             });
         });
 
-        // Header buttons
+        // Header login button
         const headerLoginBtn = document.getElementById('loginBtn');
         if (headerLoginBtn) {
-            headerLoginBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+            headerLoginBtn.addEventListener('click', () => {
                 if (this.isLoggedIn) {
                     this.logout();
                 } else {
@@ -148,62 +106,15 @@ class MobileApartmentApp {
             });
         }
 
+        // Emergency button in header
         const emergencyBtn = document.getElementById('emergencyBtn');
         if (emergencyBtn) {
-            emergencyBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+            emergencyBtn.addEventListener('click', () => {
                 this.showEmergencyModal();
             });
         }
 
-        // Quick action cards - Complete fix
-        const quickActionCards = document.querySelectorAll('.quick-action-card');
-        quickActionCards.forEach(card => {
-            const action = card.getAttribute('data-action');
-            console.log('Binding quick action:', action);
-            
-            // Remove existing listeners by cloning
-            card.replaceWith(card.cloneNode(true));
-        });
-
-        // Re-bind quick actions after cloning
-        document.querySelectorAll('.quick-action-card').forEach(card => {
-            const action = card.getAttribute('data-action');
-            
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Quick action clicked:', action);
-                this.handleQuickAction(action);
-            });
-
-            card.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Quick action touched:', action);
-                this.handleQuickAction(action);
-            });
-
-            // Visual feedback
-            card.addEventListener('touchstart', () => {
-                card.style.transform = 'scale(0.95)';
-            });
-            
-            card.addEventListener('touchcancel', () => {
-                card.style.transform = '';
-            });
-        });
-
-        // Gallery category cards - Complete fix
-        setTimeout(() => {
-            this.bindGalleryEvents();
-        }, 500);
-
-        // Modal events
-        this.bindModalEvents();
-
-        // Form events
+        // Login form
         const loginForm = document.getElementById('loginForm');
         if (loginForm) {
             loginForm.addEventListener('submit', (e) => {
@@ -212,122 +123,59 @@ class MobileApartmentApp {
             });
         }
 
+        // Logout button
         const logoutBtn = document.getElementById('logoutBtn');
         if (logoutBtn) {
-            logoutBtn.addEventListener('click', (e) => {
-                e.preventDefault();
+            logoutBtn.addEventListener('click', () => {
                 this.logout();
             });
         }
 
+        // Gallery events
+        this.bindGalleryEvents();
+
+        // Modal events
+        this.bindModalEvents();
+
+        // Quick action cards
+        this.bindQuickActionEvents();
+
+        // Document downloads
+        this.bindDownloadEvents();
+
         // Emergency contact links
         this.bindEmergencyEvents();
-
-        console.log('All events bound successfully');
     }
 
-    bindGalleryEvents() {
-        console.log('Binding gallery events...');
-        
-        const galleryCards = document.querySelectorAll('.gallery-category-card');
-        console.log('Found gallery cards:', galleryCards.length);
-        
-        galleryCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            console.log('Binding gallery card:', category);
-            
-            // Remove existing listeners
-            const newCard = card.cloneNode(true);
-            card.parentNode.replaceChild(newCard, card);
-        });
-
-        // Re-bind gallery cards after cloning
-        document.querySelectorAll('.gallery-category-card').forEach(card => {
-            const category = card.getAttribute('data-category');
-            
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Gallery card clicked:', category);
-                this.openGalleryModal(category);
-            });
-
-            card.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Gallery card touched:', category);
-                this.openGalleryModal(category);
-            });
-
-            // Visual feedback
-            card.addEventListener('touchstart', () => {
-                card.style.transform = 'translateY(-2px) scale(0.98)';
-            });
-            
-            card.addEventListener('touchcancel', () => {
-                card.style.transform = '';
-            });
-
-            // Accessibility
-            card.setAttribute('tabindex', '0');
-            card.setAttribute('role', 'button');
-            const categoryText = card.querySelector('h3')?.textContent || 'Gallery';
-            const imageCount = card.querySelector('.image-count-badge')?.textContent || '';
-            card.setAttribute('aria-label', `Open ${categoryText} with ${imageCount}`);
-        });
-
-        console.log('Gallery events bound successfully');
+    initializeNavigation() {
+        // Set initial active state
+        this.updateBottomNavigation('home');
     }
 
     navigateToSection(sectionId) {
         console.log('Navigating to section:', sectionId);
         
-        if (!sectionId) {
-            console.error('No section ID provided');
-            return;
-        }
+        // Hide all sections
+        document.querySelectorAll('.app-section').forEach(section => {
+            section.classList.remove('active');
+        });
 
-        try {
-            // Hide all sections
-            const allSections = document.querySelectorAll('.app-section');
-            allSections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Show target section
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                this.currentSection = sectionId;
-                
-                // Update navigation state
-                this.updateBottomNavigation(sectionId);
-                
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // Update login button state
-                this.updateHeaderLoginButton();
-                
-                // Re-bind gallery events if navigating to gallery
-                if (sectionId === 'gallery') {
-                    setTimeout(() => {
-                        this.bindGalleryEvents();
-                    }, 100);
-                }
-                
-                // Show success notification
-                const sectionName = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-                this.showNotification(`📱 Switched to ${sectionName}`, 'success');
-                
-                console.log('Successfully navigated to:', sectionId);
-            } else {
-                console.error('Section not found:', sectionId);
-                this.showNotification('❌ Section not found', 'error');
-            }
-        } catch (error) {
-            console.error('Navigation error:', error);
-            this.showNotification('❌ Navigation error', 'error');
+        // Show target section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            this.currentSection = sectionId;
+            this.updateBottomNavigation(sectionId);
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update login button state in header
+            this.updateHeaderLoginButton();
+            
+            console.log('Successfully navigated to:', sectionId);
+        } else {
+            console.error('Section not found:', sectionId);
         }
     }
 
@@ -355,69 +203,97 @@ class MobileApartmentApp {
         }
     }
 
+    bindQuickActionEvents() {
+        document.querySelectorAll('.quick-action-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const action = card.getAttribute('data-action');
+                this.handleQuickAction(action);
+            });
+
+            // Add keyboard support
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const action = card.getAttribute('data-action');
+                    this.handleQuickAction(action);
+                }
+            });
+        });
+    }
+
     handleQuickAction(action) {
-        console.log('Handling quick action:', action);
+        console.log('Quick action:', action);
         
-        try {
-            switch(action) {
-                case 'payment':
-                    this.showNotification('💳 Payment system coming soon! Please contact office for now.', 'info');
-                    break;
-                case 'notices':
+        switch(action) {
+            case 'payment':
+                this.showNotification('💳 Payment gateway integration coming soon! Please contact the office for bill payments.', 'info');
+                break;
+            case 'notices':
+                if (this.isLoggedIn) {
                     this.navigateToSection('residents');
-                    if (!this.isLoggedIn) {
-                        setTimeout(() => {
-                            this.showNotification('Please login to view notices', 'info');
-                        }, 500);
+                } else {
+                    this.navigateToSection('residents');
+                    this.showNotification('Please login to view latest notices.', 'info');
+                }
+                break;
+            case 'emergency':
+                this.showEmergencyModal();
+                break;
+            case 'gallery':
+                this.navigateToSection('gallery');
+                break;
+            case 'contact':
+                this.navigateToSection('contact');
+                break;
+            case 'committee':
+                this.navigateToSection('contact');
+                // Scroll to committee section
+                setTimeout(() => {
+                    const committeeSection = document.querySelector('.committee-section');
+                    if (committeeSection) {
+                        committeeSection.scrollIntoView({ behavior: 'smooth' });
                     }
-                    break;
-                case 'emergency':
-                    this.showEmergencyModal();
-                    break;
-                case 'gallery':
-                    console.log('Gallery quick action - navigating to gallery');
-                    this.navigateToSection('gallery');
-                    break;
-                case 'contact':
-                    this.navigateToSection('contact');
-                    break;
-                case 'committee':
-                    this.navigateToSection('contact');
-                    setTimeout(() => {
-                        const committeeSection = document.querySelector('.committee-section');
-                        if (committeeSection) {
-                            committeeSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }, 600);
-                    break;
-                default:
-                    this.showNotification('Feature coming soon!', 'info');
-            }
-        } catch (error) {
-            console.error('Quick action error:', error);
-            this.showNotification('❌ Action failed', 'error');
+                }, 300);
+                break;
+            default:
+                this.showNotification('Feature coming soon!', 'info');
         }
     }
 
-    initializeNavigation() {
-        this.updateBottomNavigation('home');
+    initializeQuickActions() {
+        // Add touch feedback to quick action cards
+        document.querySelectorAll('.quick-action-card').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.95)';
+            });
+            
+            card.addEventListener('touchend', () => {
+                setTimeout(() => {
+                    card.style.transform = '';
+                }, 150);
+            });
+        });
     }
 
-    initializeQuickActions() {
-        // Additional visual feedback for quick actions
-        setTimeout(() => {
-            document.querySelectorAll('.quick-action-card').forEach(card => {
-                card.addEventListener('mousedown', () => {
-                    card.style.transform = 'scale(0.95)';
-                });
-                
-                card.addEventListener('mouseup', () => {
-                    setTimeout(() => {
-                        card.style.transform = '';
-                    }, 150);
-                });
+    bindGalleryEvents() {
+        // Gallery category cards
+        document.querySelectorAll('.gallery-category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
+                this.openGalleryModal(category);
             });
-        }, 100);
+
+            // Add keyboard support
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const category = card.getAttribute('data-category');
+                    this.openGalleryModal(category);
+                }
+            });
+        });
     }
 
     bindModalEvents() {
@@ -428,8 +304,7 @@ class MobileApartmentApp {
         const galleryNext = document.getElementById('galleryNext');
 
         if (closeGalleryModal) {
-            closeGalleryModal.addEventListener('click', (e) => {
-                e.preventDefault();
+            closeGalleryModal.addEventListener('click', () => {
                 this.closeGalleryModal();
             });
         }
@@ -443,15 +318,13 @@ class MobileApartmentApp {
         }
 
         if (galleryPrev) {
-            galleryPrev.addEventListener('click', (e) => {
-                e.preventDefault();
+            galleryPrev.addEventListener('click', () => {
                 this.previousImage();
             });
         }
 
         if (galleryNext) {
-            galleryNext.addEventListener('click', (e) => {
-                e.preventDefault();
+            galleryNext.addEventListener('click', () => {
                 this.nextImage();
             });
         }
@@ -461,8 +334,7 @@ class MobileApartmentApp {
         const closeEmergencyModal = document.getElementById('closeEmergencyModal');
 
         if (closeEmergencyModal) {
-            closeEmergencyModal.addEventListener('click', (e) => {
-                e.preventDefault();
+            closeEmergencyModal.addEventListener('click', () => {
                 this.closeEmergencyModal();
             });
         }
@@ -485,40 +357,34 @@ class MobileApartmentApp {
             return;
         }
 
-        try {
-            this.currentGalleryCategory = category;
-            this.currentImageIndex = 0;
+        this.currentGalleryCategory = category;
+        this.currentImageIndex = 0;
 
-            const modal = document.getElementById('galleryModal');
-            const title = document.getElementById('galleryModalTitle');
-            
-            if (!modal || !title) {
-                console.error('Gallery modal elements not found');
-                return;
-            }
-
-            title.textContent = this.galleryData[category].title;
-            
-            this.updateGalleryDisplay();
-            this.createThumbnails();
-            
-            modal.classList.remove('hidden');
-            
-            // Prevent body scroll
-            document.body.style.overflow = 'hidden';
-            
-            // Focus management
-            const closeButton = document.getElementById('closeGalleryModal');
-            if (closeButton) {
-                setTimeout(() => closeButton.focus(), 100);
-            }
-
-            this.showNotification('📸 Gallery opened - Swipe to navigate', 'info');
-            console.log('Gallery modal opened successfully');
-        } catch (error) {
-            console.error('Gallery modal error:', error);
-            this.showNotification('❌ Failed to open gallery', 'error');
+        const modal = document.getElementById('galleryModal');
+        const title = document.getElementById('galleryModalTitle');
+        
+        if (!modal || !title) {
+            console.error('Gallery modal elements not found');
+            return;
         }
+
+        title.textContent = this.galleryData[category].title;
+        
+        this.updateGalleryDisplay();
+        this.createThumbnails();
+        
+        modal.classList.remove('hidden');
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+        
+        // Focus management
+        const closeButton = document.getElementById('closeGalleryModal');
+        if (closeButton) {
+            setTimeout(() => closeButton.focus(), 100);
+        }
+
+        console.log('Gallery modal opened successfully');
     }
 
     closeGalleryModal() {
@@ -530,7 +396,6 @@ class MobileApartmentApp {
             
             // Restore body scroll
             document.body.style.overflow = '';
-            this.showNotification('Gallery closed', 'info');
         }
     }
 
@@ -542,9 +407,11 @@ class MobileApartmentApp {
 
         // Update main image
         const mainImage = document.getElementById('galleryMainImage');
-        if (mainImage && currentImage) {
+        if (mainImage) {
+            // Show loading state
             mainImage.style.opacity = '0.5';
             
+            // Create a new image to test loading
             const tempImg = new Image();
             tempImg.onload = () => {
                 mainImage.src = currentImage.src;
@@ -553,9 +420,11 @@ class MobileApartmentApp {
             };
             
             tempImg.onerror = () => {
+                // Fallback to a working placeholder
                 mainImage.src = `https://via.placeholder.com/800x600/2563EB/ffffff?text=${encodeURIComponent(this.galleryData[this.currentGalleryCategory].title)}`;
                 mainImage.alt = currentImage.caption;
                 mainImage.style.opacity = '1';
+                console.warn('Failed to load gallery image, using placeholder');
             };
             
             tempImg.src = currentImage.src;
@@ -563,7 +432,7 @@ class MobileApartmentApp {
 
         // Update caption
         const caption = document.getElementById('galleryImageCaption');
-        if (caption && currentImage) {
+        if (caption) {
             caption.textContent = currentImage.caption;
         }
 
@@ -573,7 +442,7 @@ class MobileApartmentApp {
             counter.textContent = `${this.currentImageIndex + 1} of ${categoryData.images.length}`;
         }
 
-        // Update thumbnails
+        // Update thumbnail active state
         this.updateThumbnailActive();
 
         // Update navigation buttons
@@ -599,10 +468,14 @@ class MobileApartmentApp {
         
         if (!thumbnailContainer) return;
 
+        // Clear existing thumbnails
         thumbnailContainer.innerHTML = '';
 
+        // Create new thumbnails
         categoryData.images.forEach((image, index) => {
             const thumbnail = document.createElement('img');
+            
+            // Create thumbnail URL with smaller dimensions
             const thumbnailSrc = image.src.replace('w=800&h=600', 'w=120&h=80');
             
             thumbnail.className = 'gallery-thumbnail';
@@ -613,6 +486,7 @@ class MobileApartmentApp {
                 thumbnail.classList.add('active');
             }
 
+            // Handle thumbnail loading
             const tempThumb = new Image();
             tempThumb.onload = () => {
                 thumbnail.src = thumbnailSrc;
@@ -622,8 +496,7 @@ class MobileApartmentApp {
             };
             tempThumb.src = thumbnailSrc;
 
-            thumbnail.addEventListener('click', (e) => {
-                e.preventDefault();
+            thumbnail.addEventListener('click', () => {
                 this.currentImageIndex = index;
                 this.updateGalleryDisplay();
             });
@@ -649,7 +522,6 @@ class MobileApartmentApp {
         if (this.currentImageIndex > 0) {
             this.currentImageIndex--;
             this.updateGalleryDisplay();
-            this.showNotification('⬅️ Previous image', 'info');
         }
     }
 
@@ -660,81 +532,6 @@ class MobileApartmentApp {
         if (this.currentImageIndex < categoryData.images.length - 1) {
             this.currentImageIndex++;
             this.updateGalleryDisplay();
-            this.showNotification('➡️ Next image', 'info');
-        }
-    }
-
-    initializeTouchGestures() {
-        let touchStartTime = 0;
-        let isTouchMove = false;
-
-        document.addEventListener('touchstart', (e) => {
-            const modal = document.getElementById('galleryModal');
-            if (!modal || modal.classList.contains('hidden')) return;
-
-            touchStartTime = Date.now();
-            isTouchMove = false;
-            
-            this.touchStartX = e.touches[0].clientX;
-            this.touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        document.addEventListener('touchmove', (e) => {
-            const modal = document.getElementById('galleryModal');
-            if (!modal || modal.classList.contains('hidden')) return;
-
-            isTouchMove = true;
-            
-            if (Math.abs(e.touches[0].clientX - this.touchStartX) > 10) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        document.addEventListener('touchend', (e) => {
-            const modal = document.getElementById('galleryModal');
-            if (!modal || modal.classList.contains('hidden')) return;
-
-            const touchEndTime = Date.now();
-            const touchDuration = touchEndTime - touchStartTime;
-            
-            this.touchEndX = e.changedTouches[0].clientX;
-            this.touchEndY = e.changedTouches[0].clientY;
-            
-            if (isTouchMove && touchDuration < 500) {
-                this.handleSwipeGesture();
-            }
-        }, { passive: true });
-    }
-
-    handleSwipeGesture() {
-        if (!this.isSwipeEnabled) return;
-
-        const deltaX = this.touchEndX - this.touchStartX;
-        const deltaY = this.touchEndY - this.touchStartY;
-        
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-            this.isSwipeEnabled = false;
-            
-            if (deltaX < -50) {
-                this.nextImage();
-            } else if (deltaX > 50) {
-                this.previousImage();
-            }
-            
-            setTimeout(() => {
-                this.isSwipeEnabled = true;
-            }, 300);
-        }
-    }
-
-    showSection(sectionId) {
-        document.querySelectorAll('.app-section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
         }
     }
 
@@ -743,6 +540,12 @@ class MobileApartmentApp {
         if (modal) {
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+            
+            // Focus management
+            const closeButton = document.getElementById('closeEmergencyModal');
+            if (closeButton) {
+                setTimeout(() => closeButton.focus(), 100);
+            }
         }
     }
 
@@ -755,16 +558,17 @@ class MobileApartmentApp {
     }
 
     handleLogin() {
-        const username = document.getElementById('username')?.value;
-        const password = document.getElementById('password')?.value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
+        // Demo credentials
         if (username === 'resident' && password === 'naveen123') {
             this.isLoggedIn = true;
             this.showResidentsContent();
             this.updateHeaderLoginButton();
-            this.showNotification('🎉 Login successful!', 'success');
+            this.showNotification('🎉 Login successful! Welcome to Residents Corner.', 'success');
         } else {
-            this.showNotification('❌ Invalid credentials. Use: resident / naveen123', 'error');
+            this.showNotification('❌ Invalid credentials. Use: Username: resident, Password: naveen123', 'error');
         }
     }
 
@@ -772,7 +576,7 @@ class MobileApartmentApp {
         this.isLoggedIn = false;
         this.hideResidentsContent();
         this.updateHeaderLoginButton();
-        this.showNotification('👋 Logged out successfully', 'info');
+        this.showNotification('👋 Logged out successfully.', 'info');
     }
 
     showResidentsContent() {
@@ -791,28 +595,79 @@ class MobileApartmentApp {
         if (contentDiv) contentDiv.classList.add('hidden');
     }
 
+    bindDownloadEvents() {
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON' && e.target.textContent.includes('Download')) {
+                e.preventDefault();
+                this.showNotification('📄 Document download will be available soon. Please contact the office for physical copies.', 'info');
+            }
+        });
+    }
+
     bindEmergencyEvents() {
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const number = link.getAttribute('href').replace('tel:', '');
-                this.showNotification(`📞 Calling ${number}...`, 'info');
+                this.showNotification(`📞 Initiating call to ${number}...`, 'info');
             });
         });
     }
 
+    handleTouchGestures() {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            // Only handle gestures in gallery modal
+            if (!document.getElementById('galleryModal').classList.contains('hidden')) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }
+        });
+
+        document.addEventListener('touchend', (e) => {
+            if (!document.getElementById('galleryModal').classList.contains('hidden')) {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                this.handleGestureEnd();
+            }
+        });
+    }
+
+    handleGestureEnd() {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        
+        // Only handle horizontal swipes that are longer than vertical
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+            if (deltaX < -50) {
+                // Swipe left - next image
+                this.nextImage();
+            } else if (deltaX > 50) {
+                // Swipe right - previous image
+                this.previousImage();
+            }
+        }
+    }
+
     showNotification(message, type = 'info') {
+        // Remove existing notifications
         document.querySelectorAll('.notification').forEach(n => n.remove());
         
+        // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification status status--${type}`;
         notification.textContent = message;
         
+        // Style the notification for mobile
         Object.assign(notification.style, {
             position: 'fixed',
-            top: '80px',
+            top: '80px', // Below the header
             left: '16px',
             right: '16px',
-            zIndex: '10000',
+            zIndex: '3000',
             padding: '16px',
             borderRadius: '12px',
             fontSize: '16px',
@@ -820,10 +675,10 @@ class MobileApartmentApp {
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
             animation: 'slideDown 0.3s ease-out',
             cursor: 'pointer',
-            textAlign: 'center',
-            backdropFilter: 'blur(8px)'
+            textAlign: 'center'
         });
         
+        // Add CSS animation if not exists
         if (!document.querySelector('#notification-styles')) {
             const style = document.createElement('style');
             style.id = 'notification-styles';
@@ -840,8 +695,10 @@ class MobileApartmentApp {
             document.head.appendChild(style);
         }
         
+        // Add to page
         document.body.appendChild(notification);
         
+        // Auto remove after 4 seconds with animation
         const removeNotification = () => {
             notification.style.animation = 'slideUp 0.3s ease-out';
             setTimeout(() => {
@@ -851,40 +708,205 @@ class MobileApartmentApp {
             }, 300);
         };
         
-        setTimeout(removeNotification, 2500);
+        setTimeout(removeNotification, 4000);
+        
+        // Click to dismiss
         notification.addEventListener('click', removeNotification);
     }
 
     preloadImages() {
+        // Preload gallery images for better performance
         setTimeout(() => {
             Object.keys(this.galleryData).forEach(category => {
-                this.galleryData[category].images.forEach((image, index) => {
-                    if (index < 2) {
-                        const img = new Image();
-                        img.src = image.src;
-                    }
+                this.galleryData[category].images.forEach(image => {
+                    const img = new Image();
+                    img.src = image.src;
                 });
             });
             console.log('Gallery images preloaded');
-        }, 1000);
+        }, 2000);
+    }
+
+    // Keyboard navigation support
+    handleKeyboardNavigation() {
+        document.addEventListener('keydown', (e) => {
+            // ESC key to close modals
+            if (e.key === 'Escape') {
+                this.closeGalleryModal();
+                this.closeEmergencyModal();
+            }
+            
+            // Arrow keys for gallery navigation when modal is open
+            if (this.currentGalleryCategory) {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    this.previousImage();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    this.nextImage();
+                }
+            }
+            
+            // Number keys for quick navigation
+            if (e.key >= '1' && e.key <= '5') {
+                const sections = ['home', 'about', 'gallery', 'contact', 'residents'];
+                const index = parseInt(e.key) - 1;
+                if (sections[index]) {
+                    this.navigateToSection(sections[index]);
+                }
+            }
+        });
+    }
+
+    // Utility methods
+    formatPhoneNumber(phoneNumber) {
+        // Format phone number for display
+        return phoneNumber.replace(/(\+91)(\d{2})(\d{4})(\d{4})/, '$1 $2 $3 $4');
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Performance monitoring
+    measurePerformance() {
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', Math.round(perfData.loadEventEnd - perfData.loadEventStart), 'ms');
+            });
+        }
+    }
+
+    // Analytics tracking (placeholder)
+    trackEvent(category, action, label) {
+        console.log(`Analytics: ${category} - ${action} - ${label}`);
+    }
+
+    // Accessibility improvements
+    initializeAccessibility() {
+        // Update ARIA labels
+        document.querySelectorAll('.quick-action-card').forEach((card, index) => {
+            const actionText = card.querySelector('h3').textContent;
+            card.setAttribute('aria-label', `Quick action: ${actionText}`);
+        });
+
+        document.querySelectorAll('.gallery-category-card').forEach((card, index) => {
+            const categoryText = card.querySelector('h3').textContent;
+            card.setAttribute('aria-label', `Open gallery: ${categoryText}`);
+        });
+
+        // Focus management
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                // Ensure proper tab order
+                const focusableElements = document.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                
+                // Add visual focus indicators
+                focusableElements.forEach(el => {
+                    el.addEventListener('focus', () => {
+                        el.style.outline = '2px solid #2563EB';
+                        el.style.outlineOffset = '2px';
+                    });
+                    
+                    el.addEventListener('blur', () => {
+                        el.style.outline = '';
+                        el.style.outlineOffset = '';
+                    });
+                });
+            }
+        });
     }
 }
 
-// Initialize app
+// Initialize the mobile app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM ready - initializing app...');
     const app = new MobileApartmentApp();
+    
+    // Make app instance globally available
     window.mobileApartmentApp = app;
+    
+    // Initialize additional features
+    app.handleKeyboardNavigation();
+    app.measurePerformance();
+    app.initializeAccessibility();
+    
     console.log('Mobile Naveen Apartments app initialized successfully');
 });
 
-// Handle page visibility and orientation changes
+// Service Worker registration (for future PWA support)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        console.log('Service worker support detected - ready for PWA implementation');
+    });
+}
+
+// Handle online/offline status
+window.addEventListener('online', () => {
+    console.log('App is online');
+    if (window.mobileApartmentApp) {
+        window.mobileApartmentApp.showNotification('🌐 Internet connection restored.', 'success');
+    }
+});
+
+window.addEventListener('offline', () => {
+    console.log('App is offline');
+    if (window.mobileApartmentApp) {
+        window.mobileApartmentApp.showNotification('📱 You are currently offline. Some features may not work.', 'warning');
+    }
+});
+
+// Prevent form resubmission on page refresh
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
+
+// Handle viewport changes for mobile orientation
 window.addEventListener('orientationchange', () => {
     setTimeout(() => {
-        if (window.mobileApartmentApp && window.mobileApartmentApp.currentGalleryCategory) {
-            window.mobileApartmentApp.updateGalleryDisplay();
-        }
+        // Trigger resize event to adjust layouts
+        window.dispatchEvent(new Event('resize'));
     }, 100);
+});
+
+// Add loading states for images
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        // Add loading placeholder
+        img.style.background = 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)';
+        img.style.backgroundSize = '200% 100%';
+        img.style.animation = 'loading 1.5s infinite';
+        
+        img.addEventListener('load', () => {
+            img.style.background = '';
+            img.style.animation = '';
+            img.style.opacity = '1';
+        });
+        
+        img.addEventListener('error', () => {
+            img.style.background = '#f5f5f5';
+            img.style.animation = '';
+            img.style.opacity = '0.8';
+            console.warn('Failed to load image:', img.src);
+        });
+    });
+    
+    // Add loading animation CSS
+    if (!document.querySelector('#loading-styles')) {
+        const style = document.createElement('style');
+        style.id = 'loading-styles';
+        style.textContent = `
+            @keyframes loading {
+                0% { background-position: 200% 0; }
+                100% { background-position: -200% 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
 });
 
 console.log('Mobile Naveen Apartments JavaScript loaded successfully');
