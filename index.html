@@ -42,8 +42,41 @@
                 </div>
             </div>
 
+            <!-- Recent Notices -->
+            <div class="recent-notices">
+                <h2>Recent Announcements</h2>
+                <div class="notice-card high-priority" data-action="notices">
+                    <div class="notice-icon">💳</div>
+                    <div class="notice-content">
+                        <h3>Monthly Maintenance Due</h3>
+                        <p>Aug 01, 2025</p>
+                    </div>
+                    <div class="notice-priority">High</div>
+                </div>
+                
+                <div class="notice-card medium-priority" data-action="notices">
+                    <div class="notice-icon">📅</div>
+                    <div class="notice-content">
+                        <h3>AGM Meeting Notice</h3>
+                        <p>Jul 30, 2025</p>
+                    </div>
+                    <div class="notice-priority">Medium</div>
+                </div>
+                
+                <div class="notice-card low-priority" data-action="notices">
+                    <div class="notice-icon">🔒</div>
+                    <div class="notice-content">
+                        <h3>Security Guidelines</h3>
+                        <p>Jul 28, 2025</p>
+                    </div>
+                    <div class="notice-priority">Low</div>
+                </div>
+            </div>
+
+
             <!-- Quick Action Cards -->
             <div class="quick-actions-grid">
+                <h2>Quick Access</h2>
                 <div class="quick-action-card" data-action="payment">
                     <div class="action-icon">💳</div>
                     <div class="action-content">
@@ -93,36 +126,7 @@
                 </div>
             </div>
 
-            <!-- Recent Notices -->
-            <div class="recent-notices">
-                <h2>Recent Announcements</h2>
-                <div class="notice-card high-priority">
-                    <div class="notice-icon">💳</div>
-                    <div class="notice-content">
-                        <h3>Monthly Maintenance Due</h3>
-                        <p>Aug 01, 2025</p>
-                    </div>
-                    <div class="notice-priority">High</div>
-                </div>
-                
-                <div class="notice-card medium-priority">
-                    <div class="notice-icon">📅</div>
-                    <div class="notice-content">
-                        <h3>AGM Meeting Notice</h3>
-                        <p>Jul 30, 2025</p>
-                    </div>
-                    <div class="notice-priority">Medium</div>
-                </div>
-                
-                <div class="notice-card low-priority">
-                    <div class="notice-icon">🔒</div>
-                    <div class="notice-content">
-                        <h3>Security Guidelines</h3>
-                        <p>Jul 28, 2025</p>
-                    </div>
-                    <div class="notice-priority">Low</div>
-                </div>
-            </div>
+            
 
             <!-- Stats Cards -->
             <div class="stats-grid">
@@ -434,12 +438,12 @@
                             <h3>Notices & Circulars</h3>
                             <p>Latest notices from management</p>
                             <div class="document-list">
-                                <div class="document-item">
+                                <div class="document-item" id="MMPDownload">
                                     <span>Monthly Maintenance Payment</span>
                                     <span class="document-date">Aug 01, 2025</span>
-                                </div>
-                                <div class="document-item">
-                                    <span>AGM Meeting Notice</span>
+                                </div>  
+                                <div class="document-item" id="NoticeDownload">
+                                    <span>AGM Notice</span>
                                     <span class="document-date">Jul 30, 2025</span>
                                 </div>
                             </div>
@@ -452,8 +456,7 @@
                             <h3>Minutes of GBM</h3>
                             <p>General Body Meeting minutes</p>
                             <div class="document-actions">
-                                <button class="btn btn--outline btn--sm">Download AGM Minutes</button>
-                                <button class="btn btn--outline btn--sm">Download SGM Minutes</button>
+                                <a href="docs/AGM_MOM_04082025.pdf" download="AGM_MOM_04082025.pdf" class="btn btn--outline btn--sm">Download AGM Minutes</a>
                             </div>
                         </div>
                     </div>

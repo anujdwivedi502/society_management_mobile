@@ -204,7 +204,7 @@ class MobileApartmentApp {
     }
 
     bindQuickActionEvents() {
-        document.querySelectorAll('.quick-action-card').forEach(card => {
+        document.querySelectorAll('.quick-action-card, .notice-card').forEach(card => {
             card.addEventListener('click', () => {
                 const action = card.getAttribute('data-action');
                 this.handleQuickAction(action);
@@ -263,7 +263,7 @@ class MobileApartmentApp {
 
     initializeQuickActions() {
         // Add touch feedback to quick action cards
-        document.querySelectorAll('.quick-action-card').forEach(card => {
+        document.querySelectorAll('.quick-action-card, .notice-card').forEach(card => {
             card.addEventListener('touchstart', () => {
                 card.style.transform = 'scale(0.95)';
             });
@@ -787,7 +787,7 @@ class MobileApartmentApp {
     // Accessibility improvements
     initializeAccessibility() {
         // Update ARIA labels
-        document.querySelectorAll('.quick-action-card').forEach((card, index) => {
+        document.querySelectorAll('.quick-action-card, .notice-card').forEach((card, index) => {
             const actionText = card.querySelector('h3').textContent;
             card.setAttribute('aria-label', `Quick action: ${actionText}`);
         });
@@ -873,6 +873,23 @@ window.addEventListener('orientationchange', () => {
 });
 
 // Add loading states for images
+document.getElementById('NoticeDownload').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = 'docs/ADM_Notice_04082025.pdf';         // Path to your PDF file
+    link.download = 'ADM_Notice_04082025.pdf';     // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+document.getElementById('MMPDownload').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = 'docs/Maintenance_charges072025.xlsx';         // Path to your PDF file
+    link.download = 'Maintenance_charges072025.xlsx';     // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
@@ -907,6 +924,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.head.appendChild(style);
     }
+
 });
 
 console.log('Mobile Naveen Apartments JavaScript loaded successfully');
