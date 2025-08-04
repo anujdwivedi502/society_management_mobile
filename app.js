@@ -240,8 +240,8 @@ class MobileApartmentApp {
             case 'emergency':
                 this.showEmergencyModal();
                 break;
-            case 'gallery':
-                this.navigateToSection('gallery');
+            case 'maintenance':
+                this.showNotification('Maintenance request form will be available in the next update. Please call the maintenance team for urgent issues.', 'info');
                 break;
             case 'contact':
                 this.navigateToSection('contact');
