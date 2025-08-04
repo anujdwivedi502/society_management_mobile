@@ -672,6 +672,7 @@ class MobileApartmentApp {
             borderRadius: '12px',
             fontSize: '16px',
             fontWeight: '500',
+            background:'#fff',  
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
             animation: 'slideDown 0.3s ease-out',
             cursor: 'pointer',
